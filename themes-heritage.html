@@ -1,0 +1,1059 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anniversary Book — All Themes with Heritage Font</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Josefin+Sans:ital,wght@0,200;0,300;0,400;1,200;1,300&family=Dancing+Script:wght@400;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: #0a0a0a;
+    color: #fff;
+    line-height: 1.6;
+  }
+
+  /* Heritage font classes */
+  .h-heading {
+    font-family: 'EB Garamond', serif;
+    font-weight: 500;
+  }
+  .h-sub {
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 300;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+  }
+  .h-body {
+    font-family: 'EB Garamond', serif;
+    font-weight: 400;
+  }
+  .h-accent {
+    font-family: 'Dancing Script', cursive;
+  }
+
+  .hero {
+    min-height: 60vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem;
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #0a0a0a 100%);
+    position: relative;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(212,175,125,0.08) 0%, transparent 70%);
+    transform: translate(-50%, -50%);
+  }
+
+  .hero h1 {
+    font-family: 'EB Garamond', serif;
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+  }
+
+  .hero .subtitle {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.75rem;
+    color: #d4af72;
+    font-weight: 300;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+
+  .hero .font-badge {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.6rem;
+    color: #555;
+    font-weight: 200;
+    letter-spacing: 0.2em;
+    margin-bottom: 1rem;
+    padding: 0.4rem 1.2rem;
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 20px;
+  }
+
+  .hero .desc {
+    font-family: 'EB Garamond', serif;
+    font-size: 1rem;
+    color: #666;
+    max-width: 500px;
+    line-height: 1.8;
+    font-style: italic;
+  }
+
+  .themes-grid {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+  }
+
+  .section-label {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .section-label h2 {
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 300;
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: #666;
+    margin-bottom: 0.5rem;
+  }
+
+  .section-label p {
+    font-family: 'EB Garamond', serif;
+    font-size: 0.9rem;
+    color: #444;
+    font-style: italic;
+  }
+
+  .divider {
+    text-align: center;
+    padding: 5rem 2rem;
+  }
+
+  .divider h2 {
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 300;
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: #d4af72;
+    margin-bottom: 0.5rem;
+  }
+
+  .divider p {
+    font-family: 'EB Garamond', serif;
+    font-size: 0.9rem;
+    color: #555;
+    font-style: italic;
+  }
+
+  .theme-card {
+    margin-bottom: 6rem;
+    border-radius: 16px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+  }
+
+  .theme-card:hover { transform: translateY(-4px); }
+
+  .theme-label {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 1.5rem 2rem 0.5rem;
+  }
+
+  .theme-label h3 {
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 400;
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+
+  .theme-label span {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.6rem;
+    color: #888;
+    font-weight: 200;
+    letter-spacing: 0.1em;
+  }
+
+  .theme-desc {
+    padding: 0 2rem 1.5rem;
+    font-family: 'EB Garamond', serif;
+    font-size: 0.95rem;
+    color: #aaa;
+    font-weight: 400;
+    font-style: italic;
+  }
+
+  .book-spread {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 500px;
+    position: relative;
+  }
+
+  .book-spread .page {
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .book-spread .spine {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 2px;
+    height: 100%;
+    z-index: 10;
+  }
+
+  /* ========================================
+     THEME A: CLASSIC ELEGANT
+     ======================================== */
+  .theme-a { background: #0d0d0d; }
+  .theme-a .theme-label h3 { color: #d4af72; }
+  .theme-a .spine { background: #d4af72; }
+
+  .theme-a .page-left {
+    background: #1a1a1a;
+    padding: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .theme-a .gold-frame {
+    width: 80%;
+    aspect-ratio: 3/4;
+    background: url('https://images.unsplash.com/photo-1519741497674-611481863552?w=600&q=80') center/cover;
+    border: 2px solid #d4af72;
+    padding: 4px;
+    outline: 1px solid rgba(212,175,114,0.3);
+    outline-offset: 8px;
+  }
+
+  .theme-a .page-right {
+    background: #1a1a1a;
+    padding: 3.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .theme-a .gold-line { width: 40px; height: 1px; background: #d4af72; margin-bottom: 2rem; }
+
+  .theme-a .page-right h2 {
+    font-family: 'EB Garamond', serif;
+    font-size: 2.6rem;
+    font-weight: 500;
+    color: #f5f0e6;
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.02em;
+    line-height: 1.15;
+  }
+
+  .theme-a .page-right p {
+    font-family: 'EB Garamond', serif;
+    font-size: 1.05rem;
+    color: #8a8070;
+    line-height: 2;
+    font-style: italic;
+  }
+
+  .theme-a .year-badge {
+    margin-top: 2.5rem;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.6rem;
+    font-weight: 200;
+    letter-spacing: 0.4em;
+    color: #d4af72;
+    text-transform: uppercase;
+  }
+
+  /* ========================================
+     THEME B: POLAROID SCRAPBOOK
+     ======================================== */
+  .theme-b { background: #2a2520; }
+  .theme-b .theme-label h3 { color: #f5e6d3; }
+  .theme-b .spine { background: #8b7355; }
+
+  .theme-b .page-left {
+    background: #e8ddd0;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .theme-b .polaroids {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    width: 100%;
+    padding: 0.5rem;
+  }
+
+  .theme-b .polaroid {
+    background: #fff;
+    padding: 0.6rem 0.6rem 2.5rem;
+    box-shadow: 2px 3px 12px rgba(0,0,0,0.15);
+  }
+
+  .theme-b .polaroid-img {
+    width: 100%;
+    aspect-ratio: 1;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .theme-b .polaroid:nth-child(1) { transform: rotate(-3deg); }
+  .theme-b .polaroid:nth-child(1) .polaroid-img { background-image: url('https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=400&q=80'); }
+  .theme-b .polaroid:nth-child(2) { transform: rotate(2deg); }
+  .theme-b .polaroid:nth-child(2) .polaroid-img { background-image: url('https://images.unsplash.com/photo-1506929562872-bb421503ef21?w=400&q=80'); }
+  .theme-b .polaroid:nth-child(3) { transform: rotate(1.5deg); }
+  .theme-b .polaroid:nth-child(3) .polaroid-img { background-image: url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=400&q=80'); }
+  .theme-b .polaroid:nth-child(4) { transform: rotate(-2deg); }
+  .theme-b .polaroid:nth-child(4) .polaroid-img { background-image: url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=400&q=80'); }
+
+  .theme-b .polaroid .caption {
+    font-family: 'Dancing Script', cursive;
+    font-size: 0.9rem;
+    color: #5a4e3c;
+    text-align: center;
+    padding-top: 0.4rem;
+  }
+
+  .theme-b .page-right {
+    background: #e8ddd0;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #3a3428;
+  }
+
+  .theme-b .page-right h2 {
+    font-family: 'EB Garamond', serif;
+    font-size: 2.4rem;
+    font-weight: 500;
+    color: #3a3428;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+  }
+
+  .theme-b .note {
+    font-family: 'EB Garamond', serif;
+    font-size: 1.05rem;
+    font-style: italic;
+    color: #6a5e4c;
+    line-height: 1.9;
+    background: #fff;
+    padding: 1.5rem;
+    box-shadow: 1px 2px 6px rgba(0,0,0,0.08);
+    transform: rotate(-0.5deg);
+  }
+
+  .theme-b .sticker {
+    display: inline-block;
+    background: #f0c040;
+    color: #3a3428;
+    font-family: 'Dancing Script', cursive;
+    font-size: 1rem;
+    padding: 0.3rem 1rem;
+    border-radius: 20px;
+    margin-top: 1.5rem;
+    transform: rotate(3deg);
+    align-self: flex-start;
+  }
+
+  /* ========================================
+     THEME C: MIDNIGHT SCRAPBOOK
+     ======================================== */
+  .theme-c { background: #0d0d0d; }
+  .theme-c .theme-label h3 { color: #e8c87a; }
+  .theme-c .spine { background: rgba(212,175,114,0.3); }
+
+  .theme-c .page-left {
+    background: #141414;
+    padding: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .theme-c .dark-polaroids {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.2rem;
+    width: 100%;
+  }
+
+  .theme-c .dark-pol {
+    background: #1e1e1e;
+    padding: 0.5rem 0.5rem 2.2rem;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+    border: 1px solid rgba(212,175,114,0.1);
+  }
+
+  .theme-c .dark-pol-img {
+    width: 100%;
+    aspect-ratio: 1;
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.9) contrast(1.05);
+  }
+
+  .theme-c .dark-pol:nth-child(1) { transform: rotate(-2deg); }
+  .theme-c .dark-pol:nth-child(1) .dark-pol-img { background-image: url('https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=400&q=80'); }
+  .theme-c .dark-pol:nth-child(2) { transform: rotate(1.5deg); }
+  .theme-c .dark-pol:nth-child(2) .dark-pol-img { background-image: url('https://images.unsplash.com/photo-1517760444937-f6397edcbbcd?w=400&q=80'); }
+  .theme-c .dark-pol:nth-child(3) { transform: rotate(1deg); }
+  .theme-c .dark-pol:nth-child(3) .dark-pol-img { background-image: url('https://images.unsplash.com/photo-1501555088652-021faa106b9b?w=400&q=80'); }
+  .theme-c .dark-pol:nth-child(4) { transform: rotate(-1.5deg); }
+  .theme-c .dark-pol:nth-child(4) .dark-pol-img { background-image: url('https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=400&q=80'); }
+
+  .theme-c .dark-pol .dark-cap {
+    font-family: 'Dancing Script', cursive;
+    font-size: 0.9rem;
+    color: #d4af72;
+    text-align: center;
+    padding-top: 0.5rem;
+  }
+
+  .theme-c .page-right {
+    background: #141414;
+    padding: 3.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+  }
+
+  .theme-c .page-right h2 {
+    font-family: 'EB Garamond', serif;
+    font-size: 2.6rem;
+    font-weight: 500;
+    color: #f5f0e6;
+    margin-bottom: 0.5rem;
+    line-height: 1.15;
+  }
+
+  .theme-c .page-right .gold-underline {
+    width: 50px;
+    height: 1px;
+    background: #d4af72;
+    margin-bottom: 1.5rem;
+  }
+
+  .theme-c .dark-note {
+    font-family: 'EB Garamond', serif;
+    font-size: 1.05rem;
+    font-style: italic;
+    color: #a89880;
+    line-height: 1.9;
+    background: rgba(255,255,255,0.03);
+    border-left: 2px solid #d4af72;
+    padding: 1.2rem 1.5rem;
+  }
+
+  .theme-c .dark-sticker {
+    display: inline-block;
+    border: 1px solid rgba(212,175,114,0.4);
+    color: #d4af72;
+    font-family: 'Dancing Script', cursive;
+    font-size: 1rem;
+    padding: 0.3rem 1.2rem;
+    border-radius: 20px;
+    margin-top: 1.5rem;
+    transform: rotate(2deg);
+    align-self: flex-start;
+  }
+
+  /* ========================================
+     THEME D: GOLDEN JOURNAL
+     ======================================== */
+  .theme-d { background: #12100e; }
+  .theme-d .theme-label h3 { color: #d4af72; }
+  .theme-d .spine { background: #d4af72; }
+
+  .theme-d .page-left {
+    background: #1a1816;
+    padding: 0;
+  }
+
+  .theme-d .full-img {
+    width: 100%;
+    height: 100%;
+    background: url('https://images.unsplash.com/photo-1551632811-561732d1e306?w=800&q=80') center/cover;
+    filter: brightness(0.85) contrast(1.05);
+  }
+
+  .theme-d .page-right {
+    background: #1a1816;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .theme-d .page-right .month-tag {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.6rem;
+    font-weight: 300;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: #d4af72;
+    margin-bottom: 0.8rem;
+  }
+
+  .theme-d .page-right h2 {
+    font-family: 'EB Garamond', serif;
+    font-size: 2.6rem;
+    font-weight: 500;
+    color: #f0e8d8;
+    margin-bottom: 1.5rem;
+    line-height: 1.15;
+  }
+
+  .theme-d .journal-entry {
+    font-family: 'EB Garamond', serif;
+    font-size: 1.05rem;
+    font-style: italic;
+    color: #9a8a70;
+    line-height: 2;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(212,175,114,0.15);
+  }
+
+  .theme-d .page-right .memory-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.6rem;
+    font-weight: 200;
+    letter-spacing: 0.2em;
+    color: #6a5e48;
+    text-transform: uppercase;
+  }
+
+  .theme-d .memory-tag .dot {
+    width: 6px;
+    height: 6px;
+    background: #d4af72;
+    border-radius: 50%;
+  }
+
+  /* ========================================
+     THEME E: GALLERY WALL
+     ======================================== */
+  .theme-e { background: #0d0d0d; }
+  .theme-e .theme-label h3 { color: #c9a96e; }
+  .theme-e .spine { background: rgba(201,169,110,0.2); }
+
+  .theme-e .page-left {
+    background: #161616;
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1.2fr 0.8fr;
+    gap: 0.8rem;
+  }
+
+  .theme-e .gallery-item {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(201,169,110,0.2);
+  }
+
+  .theme-e .gallery-img {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .theme-e .gallery-item:nth-child(1) { grid-row: span 2; }
+
+  .theme-e .gallery-item:nth-child(1) .gallery-img { background-image: url('https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=600&q=80'); }
+  .theme-e .gallery-item:nth-child(2) .gallery-img { background-image: url('https://images.unsplash.com/photo-1527004013197-933c4bb611b3?w=400&q=80'); }
+  .theme-e .gallery-item:nth-child(3) .gallery-img { background-image: url('https://images.unsplash.com/photo-1503220317375-aaad61436b1b?w=400&q=80'); }
+
+  .theme-e .gallery-item .gallery-label {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 0.8rem;
+    background: linear-gradient(transparent, rgba(0,0,0,0.7));
+    font-family: 'Dancing Script', cursive;
+    font-size: 0.9rem;
+    color: #d4af72;
+  }
+
+  .theme-e .page-right {
+    background: #161616;
+    padding: 3.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .theme-e .page-right .yr {
+    font-family: 'EB Garamond', serif;
+    font-size: 5rem;
+    font-weight: 500;
+    color: rgba(201,169,110,0.08);
+    line-height: 1;
+    margin-bottom: -1rem;
+  }
+
+  .theme-e .page-right h2 {
+    font-family: 'EB Garamond', serif;
+    font-size: 2.2rem;
+    font-weight: 500;
+    color: #f0e8d8;
+    margin-bottom: 1.5rem;
+    line-height: 1.15;
+  }
+
+  .theme-e .page-right p {
+    font-family: 'EB Garamond', serif;
+    font-size: 1.05rem;
+    font-style: italic;
+    color: #8a7a60;
+    line-height: 1.9;
+  }
+
+  .theme-e .page-right .gallery-footer {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+
+  .theme-e .gallery-footer span {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.55rem;
+    font-weight: 200;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: #5a5040;
+  }
+
+  /* ========================================
+     THEME F: NOIR & NOTES
+     ======================================== */
+  .theme-f { background: #0a0a0a; }
+  .theme-f .theme-label h3 { color: #e0d0b8; }
+  .theme-f .spine { background: #333; }
+
+  .theme-f .page-left {
+    background: #111;
+    padding: 0;
+    position: relative;
+    min-height: 500px;
+  }
+
+  .theme-f .noir-bg {
+    position: absolute;
+    inset: 0;
+    background: url('https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=800&q=80') center/cover;
+    filter: brightness(0.45) contrast(1.15) saturate(0.7);
+  }
+
+  .theme-f .noir-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(0,0,0,0.5) 0%, transparent 50%, rgba(0,0,0,0.5) 100%);
+  }
+
+  .theme-f .sticky-on-photo {
+    position: absolute;
+    bottom: 2rem;
+    right: 2rem;
+    background: #f5e6a0;
+    padding: 1rem 1.2rem;
+    font-family: 'Dancing Script', cursive;
+    font-size: 0.95rem;
+    color: #3a3020;
+    transform: rotate(3deg);
+    box-shadow: 2px 3px 10px rgba(0,0,0,0.4);
+    max-width: 180px;
+    line-height: 1.5;
+    z-index: 2;
+  }
+
+  .theme-f .page-right {
+    background: #111;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .theme-f .page-right h2 {
+    font-family: 'EB Garamond', serif;
+    font-size: 2.4rem;
+    font-weight: 500;
+    color: #f0e8d8;
+    margin-bottom: 0.3rem;
+    font-style: italic;
+    line-height: 1.15;
+  }
+
+  .theme-f .page-right .thin-gold {
+    width: 30px;
+    height: 1px;
+    background: #d4af72;
+    margin: 1rem 0 1.5rem;
+  }
+
+  .theme-f .page-right p {
+    font-family: 'EB Garamond', serif;
+    font-size: 1rem;
+    color: #6a6050;
+    line-height: 1.9;
+    font-style: italic;
+  }
+
+  .theme-f .stickies-row {
+    display: flex;
+    gap: 0.8rem;
+    margin-top: 2rem;
+  }
+
+  .theme-f .mini-sticky {
+    background: #f5e6a0;
+    padding: 0.6rem 0.8rem;
+    font-family: 'Dancing Script', cursive;
+    font-size: 0.8rem;
+    color: #3a3020;
+    transform: rotate(-1deg);
+    box-shadow: 1px 2px 5px rgba(0,0,0,0.3);
+  }
+
+  .theme-f .mini-sticky:nth-child(2) { background: #a8d8ea; transform: rotate(2deg); }
+  .theme-f .mini-sticky:nth-child(3) { background: #f5c6c6; transform: rotate(-2deg); }
+
+  /* ========================================
+     THEME G: WARM LUXE
+     ======================================== */
+  .theme-g { background: #1a1610; }
+  .theme-g .theme-label h3 { color: #d4af72; }
+  .theme-g .spine { background: #c9a96e; }
+
+  .theme-g .page-left {
+    background: #f8f3eb;
+    padding: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .theme-g .warm-photos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    width: 100%;
+  }
+
+  .theme-g .warm-frame {
+    background: #fff;
+    padding: 0.5rem;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    border: 1px solid rgba(212,175,114,0.2);
+  }
+
+  .theme-g .warm-frame-img {
+    width: 100%;
+    aspect-ratio: 1;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .theme-g .warm-frame:nth-child(1) { transform: rotate(-1deg); }
+  .theme-g .warm-frame:nth-child(1) .warm-frame-img { background-image: url('https://images.unsplash.com/photo-1545232979-8bf68ee9b1af?w=400&q=80'); }
+  .theme-g .warm-frame:nth-child(2) { transform: rotate(0.5deg); margin-top: 2rem; }
+  .theme-g .warm-frame:nth-child(2) .warm-frame-img { background-image: url('https://images.unsplash.com/photo-1518568814500-bf0f8d125f46?w=400&q=80'); }
+  .theme-g .warm-frame:nth-child(3) { transform: rotate(1deg); margin-top: -1rem; }
+  .theme-g .warm-frame:nth-child(3) .warm-frame-img { background-image: url('https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=400&q=80'); }
+  .theme-g .warm-frame:nth-child(4) { transform: rotate(-0.5deg); margin-top: 1rem; }
+  .theme-g .warm-frame:nth-child(4) .warm-frame-img { background-image: url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=400&q=80'); }
+
+  .theme-g .warm-frame .warm-cap {
+    font-family: 'Dancing Script', cursive;
+    font-size: 0.85rem;
+    color: #8b7355;
+    text-align: center;
+    padding-top: 0.3rem;
+  }
+
+  .theme-g .page-right {
+    background: #f8f3eb;
+    padding: 3.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .theme-g .gold-ornament {
+    font-size: 0.9rem;
+    color: #d4af72;
+    letter-spacing: 0.6em;
+    margin-bottom: 1.5rem;
+  }
+
+  .theme-g .page-right h2 {
+    font-family: 'EB Garamond', serif;
+    font-size: 2.8rem;
+    font-weight: 500;
+    color: #3a3020;
+    margin-bottom: 1rem;
+    line-height: 1.15;
+  }
+
+  .theme-g .page-right p {
+    font-family: 'EB Garamond', serif;
+    font-size: 1.05rem;
+    color: #8a7a60;
+    line-height: 2;
+    font-style: italic;
+  }
+
+  .theme-g .handwritten-note {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.4rem;
+    color: #6a5e48;
+    margin-top: 2rem;
+    transform: rotate(-1deg);
+  }
+
+  .theme-g .page-right .date-line {
+    margin-top: 2rem;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.55rem;
+    font-weight: 200;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: #c9a96e;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(201,169,110,0.3);
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    .book-spread {
+      grid-template-columns: 1fr;
+      min-height: auto;
+    }
+    .book-spread .page { min-height: 350px; }
+    .book-spread .spine { display: none; }
+    .theme-f .page-left { min-height: 400px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <h1>Year One</h1>
+  <div class="subtitle">Theme Comparison</div>
+  <div class="font-badge">All themes shown with Heritage font: EB Garamond + Josefin Sans + Dancing Script</div>
+  <div class="desc">Same font, seven different visual styles. Pick the one that feels right.</div>
+</div>
+
+<div class="themes-grid">
+
+  <div class="section-label">
+    <h2>Your Original Picks</h2>
+    <p>Themes 7 and 9, now with Heritage typography</p>
+  </div>
+
+  <!-- THEME A -->
+  <div class="theme-card theme-a">
+    <div class="theme-label">
+      <h3>A — Classic Elegant</h3>
+      <span>Dark + gold + gallery framing</span>
+    </div>
+    <div class="theme-desc">Dark backgrounds, gold accents, single framed photos. Every image treated like it belongs in a gallery.</div>
+    <div class="book-spread">
+      <div class="spine"></div>
+      <div class="page page-left"><div class="gold-frame"></div></div>
+      <div class="page page-right">
+        <div class="gold-line"></div>
+        <h2>The First Year</h2>
+        <p>Not the easiest. Not the hardest. But ours. Every single day of it.</p>
+        <div class="year-badge">April 2025 — April 2026</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- THEME B -->
+  <div class="theme-card theme-b">
+    <div class="theme-label">
+      <h3>B — Polaroid Scrapbook</h3>
+      <span>Warm + playful + handwritten</span>
+    </div>
+    <div class="theme-desc">Scattered polaroids on warm cream backgrounds. Handwritten captions. Like a scrapbook made on the kitchen table.</div>
+    <div class="book-spread">
+      <div class="spine"></div>
+      <div class="page page-left">
+        <div class="polaroids">
+          <div class="polaroid"><div class="polaroid-img"></div><div class="caption">beach day!</div></div>
+          <div class="polaroid"><div class="polaroid-img"></div><div class="caption">golden hour</div></div>
+          <div class="polaroid"><div class="polaroid-img"></div><div class="caption">our spot</div></div>
+          <div class="polaroid"><div class="polaroid-img"></div><div class="caption">date night</div></div>
+        </div>
+      </div>
+      <div class="page page-right">
+        <h2>Things I don't want to forget</h2>
+        <div class="note">The way you always order something different and then eat half of mine anyway. The sound you make when you see a dog. How you refuse to use an umbrella.</div>
+        <div class="sticker">best year yet</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider">
+    <h2>The Mixes</h2>
+    <p>Five hybrids blending elements from both your picks</p>
+  </div>
+
+  <!-- THEME C -->
+  <div class="theme-card theme-c">
+    <div class="theme-label">
+      <h3>C — Midnight Scrapbook</h3>
+      <span>Dark bg + scattered polaroids + gold captions</span>
+    </div>
+    <div class="theme-desc">Polaroid layout on a dark background. Gold handwritten captions. Playfulness meets moodiness.</div>
+    <div class="book-spread">
+      <div class="spine"></div>
+      <div class="page page-left">
+        <div class="dark-polaroids">
+          <div class="dark-pol"><div class="dark-pol-img"></div><div class="dark-cap">that sunset</div></div>
+          <div class="dark-pol"><div class="dark-pol-img"></div><div class="dark-cap">morning light</div></div>
+          <div class="dark-pol"><div class="dark-pol-img"></div><div class="dark-cap">into the wild</div></div>
+          <div class="dark-pol"><div class="dark-pol-img"></div><div class="dark-cap">still &amp; quiet</div></div>
+        </div>
+      </div>
+      <div class="page page-right">
+        <h2>Notes from our year</h2>
+        <div class="gold-underline"></div>
+        <div class="dark-note">You said we should take the long way home. We ended up at a waterfall we didn't know existed. That's kind of how everything goes with us.</div>
+        <div class="dark-sticker">year one</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- THEME D -->
+  <div class="theme-card theme-d">
+    <div class="theme-label">
+      <h3>D — Golden Journal</h3>
+      <span>Full-bleed photo + gold tags + journal entries</span>
+    </div>
+    <div class="theme-desc">One big photo on the left, journal entry on the right. Gold month markers. A diary with photos pasted in.</div>
+    <div class="book-spread">
+      <div class="spine"></div>
+      <div class="page page-left"><div class="full-img"></div></div>
+      <div class="page page-right">
+        <div class="month-tag">July 2025</div>
+        <h2>The one where we got lost</h2>
+        <div class="journal-entry">Took the wrong turn about 2km in. Neither of us wanted to admit it. Ended up finding a ridge we never would have seen otherwise. Sometimes wrong turns are the whole point.</div>
+        <div class="memory-tag"><span class="dot"></span> Kaimai Range, Waikato</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- THEME E -->
+  <div class="theme-card theme-e">
+    <div class="theme-label">
+      <h3>E — Gallery Wall</h3>
+      <span>Multi-photo grid + dark wall + gold labels</span>
+    </div>
+    <div class="theme-desc">Multiple photos arranged like frames on a dark wall. Handwritten labels beneath each one.</div>
+    <div class="book-spread">
+      <div class="spine"></div>
+      <div class="page page-left">
+        <div class="gallery-item"><div class="gallery-img"></div><div class="gallery-label">Auckland, June</div></div>
+        <div class="gallery-item"><div class="gallery-img"></div><div class="gallery-label">the mountains</div></div>
+        <div class="gallery-item"><div class="gallery-img"></div><div class="gallery-label">road trip south</div></div>
+      </div>
+      <div class="page page-right">
+        <div class="yr">25</div>
+        <h2>Places we went</h2>
+        <p>We said we'd travel more this year. We meant overseas. Instead we found every hidden corner of our own backyard.</p>
+        <div class="gallery-footer">
+          <span>12 trips</span>
+          <span>6 hikes</span>
+          <span>1 year</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- THEME F -->
+  <div class="theme-card theme-f">
+    <div class="theme-label">
+      <h3>F — Noir & Notes</h3>
+      <span>Moody full-bleed + sticky notes on photos</span>
+    </div>
+    <div class="theme-desc">Dark cinematic photos with sticky notes placed right on them. Coloured note cards on the text page.</div>
+    <div class="book-spread">
+      <div class="spine"></div>
+      <div class="page page-left">
+        <div class="noir-bg"></div>
+        <div class="noir-overlay"></div>
+        <div class="sticky-on-photo">This was the drive where we played the same song 4 times in a row</div>
+      </div>
+      <div class="page page-right">
+        <h2>Road trips &amp; replayed songs</h2>
+        <div class="thin-gold"></div>
+        <p>There's something about being in a car together with nowhere to be. The conversations hit different when the road is long enough.</p>
+        <div class="stickies-row">
+          <div class="mini-sticky">add gas station photo here</div>
+          <div class="mini-sticky">that playlist!</div>
+          <div class="mini-sticky">2am snacks</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- THEME G -->
+  <div class="theme-card theme-g">
+    <div class="theme-label">
+      <h3>G — Warm Luxe</h3>
+      <span>Cream background + gold accents + offset photos</span>
+    </div>
+    <div class="theme-desc">Warmth of the scrapbook on creamy backgrounds, with gold detailing and elegant typography. Refined but personal.</div>
+    <div class="book-spread">
+      <div class="spine"></div>
+      <div class="page page-left">
+        <div class="warm-photos">
+          <div class="warm-frame"><div class="warm-frame-img"></div><div class="warm-cap">us</div></div>
+          <div class="warm-frame"><div class="warm-frame-img"></div><div class="warm-cap">bloom</div></div>
+          <div class="warm-frame"><div class="warm-frame-img"></div><div class="warm-cap">golden</div></div>
+          <div class="warm-frame"><div class="warm-frame-img"></div><div class="warm-cap">summit</div></div>
+        </div>
+      </div>
+      <div class="page page-right">
+        <div class="gold-ornament">&diams; &diams; &diams;</div>
+        <h2>Our First Year</h2>
+        <p>Twelve months of learning how to build a life with someone. Not perfectly. Not always gracefully. But always together.</p>
+        <div class="handwritten-note">...and it's only the beginning</div>
+        <div class="date-line">April 12, 2025 — April 12, 2026</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
