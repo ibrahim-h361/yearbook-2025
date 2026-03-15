@@ -1,0 +1,1140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Font Comparison — Refined Serif vs Classic Book</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Montserrat:wght@300;400;500&family=Sacramento&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Caveat:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Inter', sans-serif; background: #0a0a0a; color: #fff; }
+
+  .hero {
+    min-height: 45vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 3rem 2rem;
+    background: #0a0a0a;
+  }
+
+  .hero .label {
+    font-size: 0.7rem;
+    font-weight: 300;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: #d4af72;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    font-weight: 300;
+    color: #fff;
+    margin-bottom: 1rem;
+  }
+
+  .hero p {
+    font-size: 0.8rem;
+    color: #555;
+    max-width: 520px;
+    line-height: 1.8;
+  }
+
+  /* Section dividers */
+  .font-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+
+  .font-header {
+    text-align: center;
+    padding: 4rem 2rem 3rem;
+    position: relative;
+  }
+
+  .font-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 1px;
+    background: #d4af72;
+  }
+
+  .font-header h2 {
+    font-size: 0.7rem;
+    font-weight: 400;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: #d4af72;
+    margin-bottom: 0.5rem;
+  }
+
+  .font-header .fname {
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: #fff;
+    margin-bottom: 0.3rem;
+  }
+
+  .font-header p {
+    font-size: 0.75rem;
+    color: #555;
+  }
+
+  .font-header .font-details {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 1rem;
+    font-size: 0.65rem;
+    color: #444;
+    letter-spacing: 0.1em;
+  }
+
+  .font-header .font-details span { color: #666; }
+
+  /* Page container */
+  .page-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    margin-bottom: 3rem;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.3);
+  }
+
+  .page-row.single {
+    grid-template-columns: 1fr;
+  }
+
+  .page {
+    min-height: 480px;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .page-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.55rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #555;
+    margin-bottom: 2rem;
+    padding: 0.8rem 1.2rem;
+    text-align: center;
+    background: rgba(255,255,255,0.02);
+    border-radius: 6px;
+  }
+
+  /* ========================================
+     FONT 2: REFINED SERIF
+     Cormorant Garamond + Montserrat + Sacramento
+     ======================================== */
+
+  /* --- Cover Page --- */
+  .f2-cover {
+    background: #1a1a1a;
+    align-items: center;
+    text-align: center;
+    padding: 4rem;
+    grid-column: span 2;
+    min-height: 580px;
+  }
+
+  .f2-cover .cover-year {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 8rem;
+    font-weight: 300;
+    color: rgba(212,175,114,0.08);
+    line-height: 1;
+    margin-bottom: -2rem;
+  }
+
+  .f2-cover h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 4.5rem;
+    font-weight: 300;
+    color: #f0ece4;
+    letter-spacing: 0.03em;
+    margin-bottom: 0.8rem;
+    line-height: 1.1;
+  }
+
+  .f2-cover .cover-sub {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 400;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: #d4af72;
+    margin-bottom: 2rem;
+  }
+
+  .f2-cover .cover-line {
+    width: 40px;
+    height: 1px;
+    background: rgba(212,175,114,0.4);
+    margin: 0 auto 2rem;
+  }
+
+  .f2-cover .cover-script {
+    font-family: 'Sacramento', cursive;
+    font-size: 2rem;
+    color: #8a8070;
+  }
+
+  /* --- Month Spread --- */
+  .f2-month-photo {
+    background: #141414;
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 0.6rem;
+  }
+
+  .f2-month-photo .m-img {
+    background-size: cover;
+    background-position: center;
+    border: 1px solid rgba(212,175,114,0.1);
+  }
+
+  .f2-month-photo .m-img:nth-child(1) { background-image: url('https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=500&q=80'); }
+  .f2-month-photo .m-img:nth-child(2) { background-image: url('https://images.unsplash.com/photo-1517760444937-f6397edcbbcd?w=500&q=80'); }
+  .f2-month-photo .m-img:nth-child(3) { background-image: url('https://images.unsplash.com/photo-1501555088652-021faa106b9b?w=500&q=80'); grid-column: span 2; }
+
+  .f2-month-text {
+    background: #141414;
+    padding: 3.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .f2-month-text .month-label {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.6rem;
+    font-weight: 400;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: #d4af72;
+    margin-bottom: 1rem;
+  }
+
+  .f2-month-text h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.8rem;
+    font-weight: 300;
+    color: #f0ece4;
+    line-height: 1.15;
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.02em;
+  }
+
+  .f2-month-text p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.05rem;
+    font-weight: 400;
+    color: #7a7468;
+    line-height: 2;
+  }
+
+  .f2-month-text .script-note {
+    font-family: 'Sacramento', cursive;
+    font-size: 1.6rem;
+    color: #9a8a70;
+    margin-top: 2rem;
+  }
+
+  /* --- Full Bleed + Quote --- */
+  .f2-bleed {
+    background: #111;
+    padding: 0;
+    position: relative;
+    min-height: 500px;
+  }
+
+  .f2-bleed .bleed-img {
+    position: absolute;
+    inset: 0;
+    background: url('https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=1000&q=80') center/cover;
+    filter: brightness(0.5) contrast(1.1);
+  }
+
+  .f2-bleed .bleed-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, rgba(10,10,10,0.85) 0%, rgba(10,10,10,0.3) 100%);
+  }
+
+  .f2-bleed .bleed-text {
+    position: relative;
+    z-index: 2;
+    padding: 3.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+  }
+
+  .f2-bleed .bleed-text .month-label {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.6rem;
+    font-weight: 400;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: #d4af72;
+    margin-bottom: 1rem;
+  }
+
+  .f2-bleed .bleed-text h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5rem;
+    font-weight: 300;
+    color: #f0ece4;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+  }
+
+  .f2-bleed .bleed-text p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+    font-weight: 400;
+    color: #8a8478;
+    line-height: 2;
+  }
+
+  .f2-quote-page {
+    background: #141414;
+    align-items: center;
+    text-align: center;
+    padding: 4rem;
+  }
+
+  .f2-quote-page .q-mark {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 5rem;
+    color: rgba(212,175,114,0.15);
+    line-height: 1;
+    margin-bottom: -1rem;
+  }
+
+  .f2-quote-page blockquote {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem;
+    font-weight: 300;
+    font-style: italic;
+    color: #e0d8cc;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    max-width: 380px;
+  }
+
+  .f2-quote-page .q-attr {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.6rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: #6a6258;
+  }
+
+  /* --- Scrapbook Page --- */
+  .f2-scrapbook {
+    background: #141414;
+    padding: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .f2-scrapbook .pols {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    width: 100%;
+  }
+
+  .f2-scrapbook .pol {
+    background: #1e1e1e;
+    padding: 0.5rem 0.5rem 2rem;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.4);
+    border: 1px solid rgba(212,175,114,0.08);
+  }
+
+  .f2-scrapbook .pol-img {
+    width: 100%;
+    aspect-ratio: 1;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .f2-scrapbook .pol:nth-child(1) { transform: rotate(-2deg); }
+  .f2-scrapbook .pol:nth-child(1) .pol-img { background-image: url('https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=400&q=80'); }
+  .f2-scrapbook .pol:nth-child(2) { transform: rotate(1.5deg); }
+  .f2-scrapbook .pol:nth-child(2) .pol-img { background-image: url('https://images.unsplash.com/photo-1506929562872-bb421503ef21?w=400&q=80'); }
+  .f2-scrapbook .pol:nth-child(3) { transform: rotate(1deg); }
+  .f2-scrapbook .pol:nth-child(3) .pol-img { background-image: url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=400&q=80'); }
+  .f2-scrapbook .pol:nth-child(4) { transform: rotate(-1.5deg); }
+  .f2-scrapbook .pol:nth-child(4) .pol-img { background-image: url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=400&q=80'); }
+
+  .f2-scrapbook .pol .pol-cap {
+    font-family: 'Sacramento', cursive;
+    font-size: 1rem;
+    color: #d4af72;
+    text-align: center;
+    padding-top: 0.4rem;
+  }
+
+  .f2-scrapbook-text {
+    background: #141414;
+    padding: 3.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .f2-scrapbook-text h2 {
+    font-family: 'Sacramento', cursive;
+    font-size: 2.8rem;
+    color: #f0e8d8;
+    margin-bottom: 0.5rem;
+  }
+
+  .f2-scrapbook-text .gold-line {
+    width: 35px;
+    height: 1px;
+    background: #d4af72;
+    margin-bottom: 1.5rem;
+  }
+
+  .f2-scrapbook-text .note-card {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-weight: 400;
+    font-style: italic;
+    color: #9a8a70;
+    line-height: 1.9;
+    border-left: 2px solid rgba(212,175,114,0.3);
+    padding-left: 1.5rem;
+  }
+
+  .f2-scrapbook-text .tag {
+    display: inline-block;
+    border: 1px solid rgba(212,175,114,0.3);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #d4af72;
+    padding: 0.3rem 1rem;
+    border-radius: 20px;
+    margin-top: 1.5rem;
+  }
+
+  /* --- Stats Page --- */
+  .f2-stats {
+    background: #141414;
+    align-items: center;
+    text-align: center;
+    padding: 3.5rem;
+    grid-column: span 2;
+  }
+
+  .f2-stats .stats-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.6rem;
+    font-weight: 400;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: #d4af72;
+    margin-bottom: 3rem;
+  }
+
+  .f2-stats .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    max-width: 700px;
+    margin: 0 auto 3rem;
+  }
+
+  .f2-stats .stat-item .stat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3.5rem;
+    font-weight: 300;
+    color: #f0ece4;
+    line-height: 1.1;
+  }
+
+  .f2-stats .stat-item .stat-label {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.55rem;
+    font-weight: 400;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #6a6258;
+    margin-top: 0.5rem;
+  }
+
+  .f2-stats .stats-note {
+    font-family: 'Sacramento', cursive;
+    font-size: 1.6rem;
+    color: #8a7a60;
+  }
+
+
+  /* ========================================
+     FONT 6: CLASSIC BOOK
+     Libre Baskerville + Source Sans 3
+     ======================================== */
+
+  /* --- Cover Page --- */
+  .f6-cover {
+    background: #f5f0e8;
+    align-items: center;
+    text-align: center;
+    padding: 4rem;
+    grid-column: span 2;
+    min-height: 580px;
+    position: relative;
+  }
+
+  .f6-cover .cover-border {
+    position: absolute;
+    inset: 1.5rem;
+    border: 1px solid rgba(160,130,90,0.2);
+  }
+
+  .f6-cover .cover-inner-border {
+    position: absolute;
+    inset: 1.8rem;
+    border: 1px solid rgba(160,130,90,0.1);
+  }
+
+  .f6-cover .cover-year {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.5em;
+    text-transform: uppercase;
+    color: #b8a078;
+    margin-bottom: 2rem;
+    position: relative;
+  }
+
+  .f6-cover h1 {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 3.8rem;
+    font-weight: 700;
+    color: #2a2015;
+    line-height: 1.1;
+    margin-bottom: 0.8rem;
+    position: relative;
+  }
+
+  .f6-cover .cover-sub {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 300;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: #a09078;
+    margin-bottom: 2rem;
+    position: relative;
+  }
+
+  .f6-cover .cover-divider {
+    width: 60px;
+    height: 2px;
+    background: #c8a868;
+    margin: 0 auto 2rem;
+    position: relative;
+  }
+
+  .f6-cover .cover-date {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 0.9rem;
+    font-style: italic;
+    color: #8a7a60;
+    position: relative;
+  }
+
+  /* --- Month Spread --- */
+  .f6-month-photo {
+    background: #f5f0e8;
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 0.6rem;
+  }
+
+  .f6-month-photo .m-img {
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  }
+
+  .f6-month-photo .m-img:nth-child(1) { background-image: url('https://images.unsplash.com/photo-1551632811-561732d1e306?w=500&q=80'); }
+  .f6-month-photo .m-img:nth-child(2) { background-image: url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=500&q=80'); }
+  .f6-month-photo .m-img:nth-child(3) { background-image: url('https://images.unsplash.com/photo-1527004013197-933c4bb611b3?w=500&q=80'); grid-column: span 2; }
+
+  .f6-month-text {
+    background: #f5f0e8;
+    padding: 3.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .f6-month-text .month-label {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: #a09078;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(160,130,90,0.2);
+  }
+
+  .f6-month-text h2 {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #2a2015;
+    line-height: 1.25;
+    margin-bottom: 1.5rem;
+  }
+
+  .f6-month-text p {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 0.85rem;
+    font-weight: 400;
+    color: #5a5040;
+    line-height: 2.1;
+  }
+
+  .f6-month-text .location {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 0.6rem;
+    font-weight: 300;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: #b8a888;
+    margin-top: 2rem;
+  }
+
+  /* --- Full Bleed + Quote --- */
+  .f6-bleed {
+    background: #111;
+    padding: 0;
+    position: relative;
+    min-height: 500px;
+  }
+
+  .f6-bleed .bleed-img {
+    position: absolute;
+    inset: 0;
+    background: url('https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=1000&q=80') center/cover;
+    filter: brightness(0.45) contrast(1.1);
+  }
+
+  .f6-bleed .bleed-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(10,10,10,0.9) 0%, rgba(10,10,10,0.2) 60%);
+  }
+
+  .f6-bleed .bleed-text {
+    position: absolute;
+    bottom: 3rem;
+    left: 3rem;
+    right: 3rem;
+    z-index: 2;
+  }
+
+  .f6-bleed .bleed-text h2 {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #f0ece4;
+    margin-bottom: 0.8rem;
+  }
+
+  .f6-bleed .bleed-text p {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 300;
+    color: #8a8478;
+    line-height: 1.8;
+  }
+
+  .f6-quote-page {
+    background: #f5f0e8;
+    align-items: center;
+    text-align: center;
+    padding: 4rem;
+    position: relative;
+  }
+
+  .f6-quote-page .q-border {
+    position: absolute;
+    inset: 1.5rem;
+    border: 1px solid rgba(160,130,90,0.15);
+  }
+
+  .f6-quote-page blockquote {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    font-style: italic;
+    color: #3a3020;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+    max-width: 360px;
+    position: relative;
+  }
+
+  .f6-quote-page .q-dash {
+    width: 30px;
+    height: 2px;
+    background: #c8a868;
+    margin: 0 auto 1rem;
+  }
+
+  .f6-quote-page .q-attr {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: #a09078;
+    position: relative;
+  }
+
+  /* --- Scrapbook Page --- */
+  .f6-scrapbook {
+    background: #f5f0e8;
+    padding: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .f6-scrapbook .pols {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    width: 100%;
+  }
+
+  .f6-scrapbook .pol {
+    background: #fff;
+    padding: 0.5rem 0.5rem 2rem;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+  }
+
+  .f6-scrapbook .pol-img {
+    width: 100%;
+    aspect-ratio: 1;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .f6-scrapbook .pol:nth-child(1) { transform: rotate(-2.5deg); }
+  .f6-scrapbook .pol:nth-child(1) .pol-img { background-image: url('https://images.unsplash.com/photo-1519741497674-611481863552?w=400&q=80'); }
+  .f6-scrapbook .pol:nth-child(2) { transform: rotate(1.5deg); }
+  .f6-scrapbook .pol:nth-child(2) .pol-img { background-image: url('https://images.unsplash.com/photo-1518568814500-bf0f8d125f46?w=400&q=80'); }
+  .f6-scrapbook .pol:nth-child(3) { transform: rotate(1deg); }
+  .f6-scrapbook .pol:nth-child(3) .pol-img { background-image: url('https://images.unsplash.com/photo-1545232979-8bf68ee9b1af?w=400&q=80'); }
+  .f6-scrapbook .pol:nth-child(4) { transform: rotate(-1deg); }
+  .f6-scrapbook .pol:nth-child(4) .pol-img { background-image: url('https://images.unsplash.com/photo-1503220317375-aaad61436b1b?w=400&q=80'); }
+
+  .f6-scrapbook .pol .pol-cap {
+    font-family: 'Caveat', cursive;
+    font-size: 0.9rem;
+    color: #8b7355;
+    text-align: center;
+    padding-top: 0.4rem;
+  }
+
+  .f6-scrapbook-text {
+    background: #f5f0e8;
+    padding: 3.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .f6-scrapbook-text h2 {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #2a2015;
+    margin-bottom: 0.5rem;
+  }
+
+  .f6-scrapbook-text .sub {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 0.9rem;
+    font-style: italic;
+    color: #8a7a60;
+    margin-bottom: 1.5rem;
+  }
+
+  .f6-scrapbook-text .note-card {
+    font-family: 'Caveat', cursive;
+    font-size: 1.2rem;
+    color: #5a5040;
+    line-height: 1.8;
+    background: #fff;
+    padding: 1.5rem;
+    box-shadow: 1px 2px 6px rgba(0,0,0,0.05);
+    transform: rotate(-0.5deg);
+  }
+
+  .f6-scrapbook-text .tag {
+    display: inline-block;
+    background: #2a2015;
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #f5f0e8;
+    padding: 0.4rem 1.2rem;
+    border-radius: 20px;
+    margin-top: 1.5rem;
+  }
+
+  /* --- Stats Page --- */
+  .f6-stats {
+    background: #f5f0e8;
+    align-items: center;
+    text-align: center;
+    padding: 3.5rem;
+    grid-column: span 2;
+    position: relative;
+  }
+
+  .f6-stats .stats-border {
+    position: absolute;
+    inset: 1.5rem;
+    border: 1px solid rgba(160,130,90,0.15);
+  }
+
+  .f6-stats .stats-title {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: #a09078;
+    margin-bottom: 3rem;
+    position: relative;
+  }
+
+  .f6-stats .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    max-width: 700px;
+    margin: 0 auto 3rem;
+    position: relative;
+  }
+
+  .f6-stats .stat-item .stat-num {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 3rem;
+    font-weight: 700;
+    color: #2a2015;
+    line-height: 1.1;
+  }
+
+  .f6-stats .stat-item .stat-label {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 0.6rem;
+    font-weight: 400;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #a09078;
+    margin-top: 0.5rem;
+  }
+
+  .f6-stats .stats-note {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 1rem;
+    font-style: italic;
+    color: #8a7a60;
+    position: relative;
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    .page-row {
+      grid-template-columns: 1fr;
+    }
+    .f2-cover, .f6-cover, .f2-stats, .f6-stats {
+      grid-column: span 1;
+    }
+    .page { min-height: 380px; }
+    .f2-cover h1 { font-size: 3rem; }
+    .f6-cover h1 { font-size: 2.5rem; }
+    .f2-stats .stats-grid, .f6-stats .stats-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="label">Final Two</div>
+  <h1>Refined Serif vs Classic Book</h1>
+  <p>Same yearbook pages, two different font palettes. Each section shows a cover, month spread, photo + quote, scrapbook page, and stats page.</p>
+</div>
+
+<!-- ========================================
+     FONT 2: REFINED SERIF
+     ======================================== -->
+<div class="font-section">
+
+  <div class="font-header">
+    <h2>Font Palette 02</h2>
+    <div class="fname" style="font-family:'Cormorant Garamond',serif; font-weight:300;">Refined Serif</div>
+    <p>Light, elegant, quiet confidence</p>
+    <div class="font-details">
+      <span>Heading: Cormorant Garamond Light</span>
+      <span>Sub: Montserrat</span>
+      <span>Body: Cormorant Garamond</span>
+      <span>Accent: Sacramento</span>
+    </div>
+  </div>
+
+  <!-- Cover -->
+  <div class="page-label">Cover Page</div>
+  <div class="page-row single">
+    <div class="page f2-cover">
+      <div class="cover-year">I</div>
+      <h1>Year One</h1>
+      <div class="cover-sub">Our First Year Together</div>
+      <div class="cover-line"></div>
+      <div class="cover-script">April 2025 to April 2026</div>
+    </div>
+  </div>
+
+  <!-- Month Spread -->
+  <div class="page-label">Month Spread — July</div>
+  <div class="page-row">
+    <div class="page f2-month-photo">
+      <div class="m-img"></div>
+      <div class="m-img"></div>
+      <div class="m-img"></div>
+    </div>
+    <div class="page f2-month-text">
+      <div class="month-label">July 2025</div>
+      <h2>The one where we got completely lost</h2>
+      <p>Took the wrong turn about 2km in. Neither of us wanted to admit it. Ended up finding a ridge we never would have seen otherwise. Sometimes wrong turns are the whole point.</p>
+      <div class="script-note">best detour ever</div>
+    </div>
+  </div>
+
+  <!-- Full Bleed + Quote -->
+  <div class="page-label">Full Bleed Photo + Quote Page</div>
+  <div class="page-row">
+    <div class="page f2-bleed">
+      <div class="bleed-img"></div>
+      <div class="bleed-overlay"></div>
+      <div class="bleed-text">
+        <div class="month-label">September 2025</div>
+        <h2>Into the quiet</h2>
+        <p>We didn't need the world to be quiet. We just needed it to be ours for a while. Every trail, every summit, every still morning before the day started.</p>
+      </div>
+    </div>
+    <div class="page f2-quote-page">
+      <div class="q-mark">"</div>
+      <blockquote>Home is not a place. It's the person you can sit in silence with and feel completely at ease.</blockquote>
+      <div class="q-attr">Something you said in the car one night</div>
+    </div>
+  </div>
+
+  <!-- Scrapbook Page -->
+  <div class="page-label">Scrapbook / Memory Page</div>
+  <div class="page-row">
+    <div class="page f2-scrapbook">
+      <div class="pols">
+        <div class="pol"><div class="pol-img"></div><div class="pol-cap">beach day</div></div>
+        <div class="pol"><div class="pol-img"></div><div class="pol-cap">golden hour</div></div>
+        <div class="pol"><div class="pol-img"></div><div class="pol-cap">our spot</div></div>
+        <div class="pol"><div class="pol-img"></div><div class="pol-cap">date night</div></div>
+      </div>
+    </div>
+    <div class="page f2-scrapbook-text">
+      <h2>Little moments</h2>
+      <div class="gold-line"></div>
+      <div class="note-card">The way you always order something different and then eat half of mine anyway. The sound you make when you see a dog. How you refuse to use an umbrella.</div>
+      <div class="tag">Year One Favourites</div>
+    </div>
+  </div>
+
+  <!-- Stats Page -->
+  <div class="page-label">Year in Numbers</div>
+  <div class="page-row single">
+    <div class="page f2-stats">
+      <div class="stats-title">Our Year in Numbers</div>
+      <div class="stats-grid">
+        <div class="stat-item">
+          <div class="stat-num">12</div>
+          <div class="stat-label">Trips Taken</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">6</div>
+          <div class="stat-label">Hikes</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">47</div>
+          <div class="stat-label">Date Nights</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">365</div>
+          <div class="stat-label">Days Together</div>
+        </div>
+      </div>
+      <div class="stats-note">...and counting</div>
+    </div>
+  </div>
+
+</div>
+
+
+<!-- ========================================
+     FONT 6: CLASSIC BOOK
+     ======================================== -->
+<div class="font-section">
+
+  <div class="font-header">
+    <h2>Font Palette 06</h2>
+    <div class="fname" style="font-family:'Libre Baskerville',serif; font-weight:700;">Classic Book</div>
+    <p>Strong, traditional, old library warmth</p>
+    <div class="font-details">
+      <span>Heading: Libre Baskerville Bold</span>
+      <span>Sub: Source Sans 3</span>
+      <span>Body: Libre Baskerville</span>
+      <span>Accent: Caveat</span>
+    </div>
+  </div>
+
+  <!-- Cover -->
+  <div class="page-label">Cover Page</div>
+  <div class="page-row single">
+    <div class="page f6-cover">
+      <div class="cover-border"></div>
+      <div class="cover-inner-border"></div>
+      <div class="cover-year">The First Volume</div>
+      <h1>Year One</h1>
+      <div class="cover-sub">Our First Year Together</div>
+      <div class="cover-divider"></div>
+      <div class="cover-date">April 2025 — April 2026</div>
+    </div>
+  </div>
+
+  <!-- Month Spread -->
+  <div class="page-label">Month Spread — July</div>
+  <div class="page-row">
+    <div class="page f6-month-photo">
+      <div class="m-img"></div>
+      <div class="m-img"></div>
+      <div class="m-img"></div>
+    </div>
+    <div class="page f6-month-text">
+      <div class="month-label">July 2025</div>
+      <h2>The one where we got completely lost</h2>
+      <p>Took the wrong turn about 2km in. Neither of us wanted to admit it. Ended up finding a ridge we never would have seen otherwise. Sometimes wrong turns are the whole point.</p>
+      <div class="location">Kaimai Range, Waikato</div>
+    </div>
+  </div>
+
+  <!-- Full Bleed + Quote -->
+  <div class="page-label">Full Bleed Photo + Quote Page</div>
+  <div class="page-row">
+    <div class="page f6-bleed">
+      <div class="bleed-img"></div>
+      <div class="bleed-overlay"></div>
+      <div class="bleed-text">
+        <h2>Into the quiet</h2>
+        <p>We didn't need the world to be quiet. We just needed it to be ours for a while.</p>
+      </div>
+    </div>
+    <div class="page f6-quote-page">
+      <div class="q-border"></div>
+      <div class="q-dash"></div>
+      <blockquote>Home is not a place. It's the person you can sit in silence with and feel completely at ease.</blockquote>
+      <div class="q-dash"></div>
+      <div class="q-attr">Something you said in the car one night</div>
+    </div>
+  </div>
+
+  <!-- Scrapbook Page -->
+  <div class="page-label">Scrapbook / Memory Page</div>
+  <div class="page-row">
+    <div class="page f6-scrapbook">
+      <div class="pols">
+        <div class="pol"><div class="pol-img"></div><div class="pol-cap">the wedding</div></div>
+        <div class="pol"><div class="pol-img"></div><div class="pol-cap">spring walk</div></div>
+        <div class="pol"><div class="pol-img"></div><div class="pol-cap">us two</div></div>
+        <div class="pol"><div class="pol-img"></div><div class="pol-cap">road trip</div></div>
+      </div>
+    </div>
+    <div class="page f6-scrapbook-text">
+      <h2>Little moments</h2>
+      <div class="sub">the ones that matter most</div>
+      <div class="note-card">The way you always order something different and then eat half of mine anyway. The sound you make when you see a dog. How you refuse to use an umbrella.</div>
+      <div class="tag">Year One Favourites</div>
+    </div>
+  </div>
+
+  <!-- Stats Page -->
+  <div class="page-label">Year in Numbers</div>
+  <div class="page-row single">
+    <div class="page f6-stats">
+      <div class="stats-border"></div>
+      <div class="stats-title">Our Year in Numbers</div>
+      <div class="stats-grid">
+        <div class="stat-item">
+          <div class="stat-num">12</div>
+          <div class="stat-label">Trips Taken</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">6</div>
+          <div class="stat-label">Hikes</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">47</div>
+          <div class="stat-label">Date Nights</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">365</div>
+          <div class="stat-label">Days Together</div>
+        </div>
+      </div>
+      <div class="stats-note">...and counting</div>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
