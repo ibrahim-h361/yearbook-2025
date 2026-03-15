@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anniversary Book — Font Palettes</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Raleway:wght@300;400;500&family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@300;400;500&family=Caveat:wght@400;600&family=Lora:ital,wght@0,400;0,600;1,400&family=Nunito:wght@300;400;600&family=Outfit:wght@200;300;400;500&family=Space+Grotesk:wght@300;400;500&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Bebas+Neue&family=Work+Sans:ital,wght@0,300;0,400;0,500;1,300&family=Jost:ital,wght@0,200;0,300;0,400;1,300&family=Sacramento&family=Sora:wght@200;300;400;500&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;1,9..144,300;1,9..144,400&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,700;1,6..96,400&family=Manrope:wght@300;400;500&family=Spectral:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Karla:ital,wght@0,300;0,400;0,500;1,300&family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=Poppins:ital,wght@0,200;0,300;0,400;1,200;1,300&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Albert+Sans:ital,wght@0,200;0,300;0,400;1,200;1,300&family=Gilda+Display&family=Josefin+Sans:ital,wght@0,200;0,300;0,400;1,200;1,300&family=Dancing+Script:wght@400;600&family=Cardo:ital,wght@0,400;0,700;1,400&family=Urbanist:ital,wght@0,200;0,300;0,400;1,200;1,300&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: #0a0a0a;
+    color: #fff;
+  }
+
+  .hero {
+    min-height: 50vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem;
+    background: #0a0a0a;
+  }
+
+  .hero h1 {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 300;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: #d4af72;
+    margin-bottom: 2rem;
+  }
+
+  .hero .big {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 400;
+    color: #fff;
+    margin-bottom: 1rem;
+  }
+
+  .hero p {
+    font-size: 0.85rem;
+    color: #555;
+    max-width: 480px;
+    line-height: 1.8;
+  }
+
+  .grid {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  /* ---- FONT CARD ---- */
+  .font-card {
+    border-radius: 16px;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 520px;
+    transition: transform 0.3s ease;
+  }
+
+  .font-card:hover { transform: translateY(-3px); }
+
+  .font-info {
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .font-number {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    opacity: 0.4;
+    margin-bottom: 0.5rem;
+  }
+
+  .font-name {
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-bottom: 0.3rem;
+  }
+
+  .font-vibe {
+    font-size: 0.75rem;
+    opacity: 0.5;
+    font-weight: 300;
+    margin-bottom: 2rem;
+  }
+
+  .font-list {
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .font-list-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-size: 0.7rem;
+    opacity: 0.4;
+    letter-spacing: 0.05em;
+  }
+
+  .font-list-item .role { text-transform: uppercase; letter-spacing: 0.15em; }
+
+  .font-preview {
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .preview-heading { margin-bottom: 0.8rem; }
+  .preview-sub { margin-bottom: 1.5rem; }
+  .preview-body { margin-bottom: 1.5rem; }
+  .preview-accent { margin-top: auto; }
+
+  /* ========================================
+     1. EDITORIAL LUXE
+     ======================================== */
+  .fc-1 .font-info { background: #111; color: #e8e4dc; }
+  .fc-1 .font-name { color: #f0e8d8; }
+  .fc-1 .font-preview { background: #f8f5ef; color: #2a2520; }
+
+  .fc-1 .preview-heading {
+    font-family: 'Bodoni Moda', serif;
+    font-size: 2.8rem;
+    font-weight: 400;
+    line-height: 1.1;
+    color: #1a1510;
+  }
+
+  .fc-1 .preview-sub {
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 300;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: #b8a080;
+  }
+
+  .fc-1 .preview-body {
+    font-family: 'Spectral', serif;
+    font-size: 0.95rem;
+    font-weight: 300;
+    line-height: 2;
+    color: #6a5e50;
+    font-style: italic;
+  }
+
+  .fc-1 .preview-accent {
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: #c0a878;
+  }
+
+  /* ========================================
+     2. REFINED SERIF
+     ======================================== */
+  .fc-2 .font-info { background: #0e0e0e; color: #d8d0c4; }
+  .fc-2 .font-name { color: #e8e0d4; }
+  .fc-2 .font-preview { background: #1a1a1a; color: #e8e4dc; }
+
+  .fc-2 .preview-heading {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3rem;
+    font-weight: 300;
+    line-height: 1.15;
+    color: #f0ece4;
+    letter-spacing: 0.02em;
+  }
+
+  .fc-2 .preview-sub {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 400;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: #d4af72;
+  }
+
+  .fc-2 .preview-body {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.05rem;
+    font-weight: 400;
+    line-height: 2;
+    color: #8a8070;
+  }
+
+  .fc-2 .preview-accent {
+    font-family: 'Sacramento', cursive;
+    font-size: 1.8rem;
+    color: #a09080;
+  }
+
+  /* ========================================
+     3. BOLD EDITORIAL
+     ======================================== */
+  .fc-3 .font-info { background: #faf8f4; color: #3a3428; }
+  .fc-3 .font-name { color: #2a2418; }
+  .fc-3 .font-preview { background: #111; color: #f0ece4; }
+
+  .fc-3 .preview-heading {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 3.8rem;
+    line-height: 0.95;
+    letter-spacing: 0.02em;
+    color: #fff;
+  }
+
+  .fc-3 .preview-sub {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 400;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #d4af72;
+    padding-top: 0.5rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .fc-3 .preview-body {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 300;
+    line-height: 1.9;
+    color: #888;
+  }
+
+  .fc-3 .preview-accent {
+    font-family: 'Caveat', cursive;
+    font-size: 1.4rem;
+    color: #6a6050;
+  }
+
+  /* ========================================
+     4. SOFT & WARM
+     ======================================== */
+  .fc-4 .font-info { background: #1c1816; color: #d8c8b0; }
+  .fc-4 .font-name { color: #f0e0c8; }
+  .fc-4 .font-preview { background: #faf6f0; color: #3a3020; }
+
+  .fc-4 .preview-heading {
+    font-family: 'Lora', serif;
+    font-size: 2.4rem;
+    font-weight: 400;
+    line-height: 1.2;
+    color: #2a2015;
+  }
+
+  .fc-4 .preview-sub {
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 400;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #b8a080;
+  }
+
+  .fc-4 .preview-body {
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 300;
+    line-height: 2;
+    color: #7a6e5c;
+  }
+
+  .fc-4 .preview-accent {
+    font-family: 'Caveat', cursive;
+    font-size: 1.5rem;
+    color: #8a7a60;
+  }
+
+  /* ========================================
+     5. ULTRA MINIMAL
+     ======================================== */
+  .fc-5 .font-info { background: #fafafa; color: #333; }
+  .fc-5 .font-name { color: #111; }
+  .fc-5 .font-preview { background: #fff; color: #222; border-left: 1px solid #eee; }
+
+  .fc-5 .preview-heading {
+    font-family: 'Outfit', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 200;
+    line-height: 1.15;
+    color: #111;
+    letter-spacing: -0.02em;
+  }
+
+  .fc-5 .preview-sub {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 400;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #bbb;
+  }
+
+  .fc-5 .preview-body {
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 300;
+    line-height: 2;
+    color: #888;
+  }
+
+  .fc-5 .preview-accent {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 300;
+    color: #ccc;
+    letter-spacing: 0.15em;
+  }
+
+  /* ========================================
+     6. CLASSIC BOOK
+     ======================================== */
+  .fc-6 .font-info { background: #12100e; color: #c8b898; }
+  .fc-6 .font-name { color: #e0d0b0; }
+  .fc-6 .font-preview { background: #f5f0e8; color: #2a2418; }
+
+  .fc-6 .preview-heading {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 2.2rem;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #1a1510;
+  }
+
+  .fc-6 .preview-sub {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 400;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: #a09078;
+  }
+
+  .fc-6 .preview-body {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 0.85rem;
+    font-weight: 400;
+    line-height: 2.1;
+    color: #5a5040;
+  }
+
+  .fc-6 .preview-accent {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 300;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: #b8a888;
+  }
+
+  /* ========================================
+     7. ELEGANT FLOW
+     ======================================== */
+  .fc-7 .font-info { background: #161418; color: #c8b8d0; }
+  .fc-7 .font-name { color: #e0d8e8; }
+  .fc-7 .font-preview { background: #1a1820; color: #e8e4ec; }
+
+  .fc-7 .preview-heading {
+    font-family: 'DM Serif Display', serif;
+    font-size: 2.8rem;
+    font-weight: 400;
+    line-height: 1.15;
+    color: #f0ece4;
+  }
+
+  .fc-7 .preview-sub {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 300;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: #d4af72;
+  }
+
+  .fc-7 .preview-body {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 300;
+    line-height: 2;
+    color: #7a7480;
+  }
+
+  .fc-7 .preview-accent {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.6rem;
+    color: #a09888;
+  }
+
+  /* ========================================
+     8. CONTEMPORARY
+     ======================================== */
+  .fc-8 .font-info { background: #0c0c0c; color: #b8b0a8; }
+  .fc-8 .font-name { color: #d8d0c8; }
+  .fc-8 .font-preview { background: #141210; color: #e8e0d8; }
+
+  .fc-8 .preview-heading {
+    font-family: 'Fraunces', serif;
+    font-size: 2.6rem;
+    font-weight: 300;
+    font-style: normal;
+    line-height: 1.2;
+    color: #f0ece4;
+  }
+
+  .fc-8 .preview-sub {
+    font-family: 'Sora', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 300;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: #c9a96e;
+  }
+
+  .fc-8 .preview-body {
+    font-family: 'Sora', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 200;
+    line-height: 2.1;
+    color: #6a6460;
+  }
+
+  .fc-8 .preview-accent {
+    font-family: 'Fraunces', serif;
+    font-size: 1.1rem;
+    font-weight: 300;
+    font-style: italic;
+    color: #8a8078;
+  }
+
+  /* ========================================
+     9. HERITAGE
+     ======================================== */
+  .fc-9 .font-info { background: #14120e; color: #c8b898; }
+  .fc-9 .font-name { color: #e0d8c0; }
+  .fc-9 .font-preview { background: #f0ebe2; color: #2a2418; }
+
+  .fc-9 .preview-heading {
+    font-family: 'EB Garamond', serif;
+    font-size: 2.8rem;
+    font-weight: 400;
+    line-height: 1.15;
+    color: #1a1510;
+  }
+
+  .fc-9 .preview-sub {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 300;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: #a89068;
+  }
+
+  .fc-9 .preview-body {
+    font-family: 'Cardo', serif;
+    font-size: 0.9rem;
+    font-weight: 400;
+    line-height: 2.1;
+    color: #5a5040;
+    font-style: italic;
+  }
+
+  .fc-9 .preview-accent {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 200;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: #b0a080;
+  }
+
+  /* ========================================
+     10. MODERN CLEAN
+     ======================================== */
+  .fc-10 .font-info { background: #111; color: #a8a0a0; }
+  .fc-10 .font-name { color: #d0c8c8; }
+  .fc-10 .font-preview { background: #161616; color: #e8e4e0; }
+
+  .fc-10 .preview-heading {
+    font-family: 'Gilda Display', serif;
+    font-size: 2.6rem;
+    font-weight: 400;
+    line-height: 1.2;
+    color: #f0ece4;
+    letter-spacing: 0.02em;
+  }
+
+  .fc-10 .preview-sub {
+    font-family: 'Urbanist', sans-serif;
+    font-size: 0.68rem;
+    font-weight: 300;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: #d4af72;
+  }
+
+  .fc-10 .preview-body {
+    font-family: 'Urbanist', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 200;
+    line-height: 2.1;
+    color: #6a6460;
+  }
+
+  .fc-10 .preview-accent {
+    font-family: 'Gilda Display', serif;
+    font-size: 1rem;
+    font-weight: 400;
+    font-style: normal;
+    color: #8a8078;
+    letter-spacing: 0.05em;
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    .font-card {
+      grid-template-columns: 1fr;
+    }
+    .font-preview { min-height: 400px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <h1>Font Palettes</h1>
+  <div class="big">Pick how it reads</div>
+  <p>10 font combinations. Each uses 3–4 fonts across heading, subheading, body, and accent. Same sample text so you can compare purely on feel.</p>
+</div>
+
+<div class="grid">
+
+  <!-- 1 -->
+  <div class="font-card fc-1">
+    <div class="font-info">
+      <div>
+        <div class="font-number">Font Palette 01</div>
+        <div class="font-name">Editorial Luxe</div>
+        <div class="font-vibe">High fashion magazine. Sharp contrasts, thin serifs.</div>
+      </div>
+      <div class="font-list">
+        <div class="font-list-item"><span class="role">Heading</span><span>Bodoni Moda</span></div>
+        <div class="font-list-item"><span class="role">Subheading</span><span>Manrope</span></div>
+        <div class="font-list-item"><span class="role">Body</span><span>Spectral Italic</span></div>
+        <div class="font-list-item"><span class="role">Accent</span><span>Manrope</span></div>
+      </div>
+    </div>
+    <div class="font-preview">
+      <div class="preview-heading">The First Year</div>
+      <div class="preview-sub">April 2025 — April 2026</div>
+      <div class="preview-body">We drove with no plan and ended up at a waterfall we didn't know existed. That's kind of how everything goes with us. Wrong turns becoming the whole point.</div>
+      <div class="preview-accent">Chapter One &mdash; Where It Started</div>
+    </div>
+  </div>
+
+  <!-- 2 -->
+  <div class="font-card fc-2">
+    <div class="font-info">
+      <div>
+        <div class="font-number">Font Palette 02</div>
+        <div class="font-name">Refined Serif</div>
+        <div class="font-vibe">Quiet elegance. Light weight serifs, script accent.</div>
+      </div>
+      <div class="font-list">
+        <div class="font-list-item"><span class="role">Heading</span><span>Cormorant Garamond Light</span></div>
+        <div class="font-list-item"><span class="role">Subheading</span><span>Montserrat</span></div>
+        <div class="font-list-item"><span class="role">Body</span><span>Cormorant Garamond</span></div>
+        <div class="font-list-item"><span class="role">Accent</span><span>Sacramento</span></div>
+      </div>
+    </div>
+    <div class="font-preview">
+      <div class="preview-heading">The First Year</div>
+      <div class="preview-sub">April 2025 — April 2026</div>
+      <div class="preview-body">We drove with no plan and ended up at a waterfall we didn't know existed. That's kind of how everything goes with us. Wrong turns becoming the whole point.</div>
+      <div class="preview-accent">...and I'd do it all again</div>
+    </div>
+  </div>
+
+  <!-- 3 -->
+  <div class="font-card fc-3">
+    <div class="font-info">
+      <div>
+        <div class="font-number">Font Palette 03</div>
+        <div class="font-name">Bold Editorial</div>
+        <div class="font-vibe">Magazine cover energy. Tall caps, clean body.</div>
+      </div>
+      <div class="font-list">
+        <div class="font-list-item"><span class="role">Heading</span><span>Bebas Neue</span></div>
+        <div class="font-list-item"><span class="role">Subheading</span><span>Work Sans</span></div>
+        <div class="font-list-item"><span class="role">Body</span><span>Work Sans Light</span></div>
+        <div class="font-list-item"><span class="role">Accent</span><span>Caveat</span></div>
+      </div>
+    </div>
+    <div class="font-preview">
+      <div class="preview-heading">THE FIRST<br>YEAR</div>
+      <div class="preview-sub">April 2025 — April 2026</div>
+      <div class="preview-body">We drove with no plan and ended up at a waterfall we didn't know existed. That's kind of how everything goes with us. Wrong turns becoming the whole point.</div>
+      <div class="preview-accent">...and I'd do it all again</div>
+    </div>
+  </div>
+
+  <!-- 4 -->
+  <div class="font-card fc-4">
+    <div class="font-info">
+      <div>
+        <div class="font-number">Font Palette 04</div>
+        <div class="font-name">Soft & Warm</div>
+        <div class="font-vibe">Cozy. Rounded sans, warm serif, handwritten notes.</div>
+      </div>
+      <div class="font-list">
+        <div class="font-list-item"><span class="role">Heading</span><span>Lora</span></div>
+        <div class="font-list-item"><span class="role">Subheading</span><span>Nunito</span></div>
+        <div class="font-list-item"><span class="role">Body</span><span>Nunito Light</span></div>
+        <div class="font-list-item"><span class="role">Accent</span><span>Caveat</span></div>
+      </div>
+    </div>
+    <div class="font-preview">
+      <div class="preview-heading">The First Year</div>
+      <div class="preview-sub">April 2025 — April 2026</div>
+      <div class="preview-body">We drove with no plan and ended up at a waterfall we didn't know existed. That's kind of how everything goes with us. Wrong turns becoming the whole point.</div>
+      <div class="preview-accent">...and I'd do it all again</div>
+    </div>
+  </div>
+
+  <!-- 5 -->
+  <div class="font-card fc-5">
+    <div class="font-info">
+      <div>
+        <div class="font-number">Font Palette 05</div>
+        <div class="font-name">Ultra Minimal</div>
+        <div class="font-vibe">Barely there. Thin weights, generous spacing.</div>
+      </div>
+      <div class="font-list">
+        <div class="font-list-item"><span class="role">Heading</span><span>Outfit ExtraLight</span></div>
+        <div class="font-list-item"><span class="role">Subheading</span><span>Space Grotesk</span></div>
+        <div class="font-list-item"><span class="role">Body</span><span>Outfit Light</span></div>
+        <div class="font-list-item"><span class="role">Accent</span><span>Space Grotesk Light</span></div>
+      </div>
+    </div>
+    <div class="font-preview">
+      <div class="preview-heading">The First Year</div>
+      <div class="preview-sub">April 2025 — April 2026</div>
+      <div class="preview-body">We drove with no plan and ended up at a waterfall we didn't know existed. That's kind of how everything goes with us. Wrong turns becoming the whole point.</div>
+      <div class="preview-accent">Chapter One &mdash; Where It Started</div>
+    </div>
+  </div>
+
+  <!-- 6 -->
+  <div class="font-card fc-6">
+    <div class="font-info">
+      <div>
+        <div class="font-number">Font Palette 06</div>
+        <div class="font-name">Classic Book</div>
+        <div class="font-vibe">Old library. Strong serif heading, clean sans details.</div>
+      </div>
+      <div class="font-list">
+        <div class="font-list-item"><span class="role">Heading</span><span>Libre Baskerville Bold</span></div>
+        <div class="font-list-item"><span class="role">Subheading</span><span>Source Sans 3</span></div>
+        <div class="font-list-item"><span class="role">Body</span><span>Libre Baskerville</span></div>
+        <div class="font-list-item"><span class="role">Accent</span><span>Source Sans 3 Light</span></div>
+      </div>
+    </div>
+    <div class="font-preview">
+      <div class="preview-heading">The First Year</div>
+      <div class="preview-sub">April 2025 — April 2026</div>
+      <div class="preview-body">We drove with no plan and ended up at a waterfall we didn't know existed. That's kind of how everything goes with us. Wrong turns becoming the whole point.</div>
+      <div class="preview-accent">Chapter One &mdash; Where It Started</div>
+    </div>
+  </div>
+
+  <!-- 7 -->
+  <div class="font-card fc-7">
+    <div class="font-info">
+      <div>
+        <div class="font-number">Font Palette 07</div>
+        <div class="font-name">Elegant Flow</div>
+        <div class="font-vibe">Theatrical serif, airy sans, flowing script accent.</div>
+      </div>
+      <div class="font-list">
+        <div class="font-list-item"><span class="role">Heading</span><span>DM Serif Display</span></div>
+        <div class="font-list-item"><span class="role">Subheading</span><span>Jost Light</span></div>
+        <div class="font-list-item"><span class="role">Body</span><span>Jost Light</span></div>
+        <div class="font-list-item"><span class="role">Accent</span><span>Dancing Script</span></div>
+      </div>
+    </div>
+    <div class="font-preview">
+      <div class="preview-heading">The First Year</div>
+      <div class="preview-sub">April 2025 — April 2026</div>
+      <div class="preview-body">We drove with no plan and ended up at a waterfall we didn't know existed. That's kind of how everything goes with us. Wrong turns becoming the whole point.</div>
+      <div class="preview-accent">...and I'd do it all again</div>
+    </div>
+  </div>
+
+  <!-- 8 -->
+  <div class="font-card fc-8">
+    <div class="font-info">
+      <div>
+        <div class="font-number">Font Palette 08</div>
+        <div class="font-name">Contemporary</div>
+        <div class="font-vibe">Modern quirkiness. Soft optical serif, geometric sans.</div>
+      </div>
+      <div class="font-list">
+        <div class="font-list-item"><span class="role">Heading</span><span>Fraunces Light</span></div>
+        <div class="font-list-item"><span class="role">Subheading</span><span>Sora Light</span></div>
+        <div class="font-list-item"><span class="role">Body</span><span>Sora ExtraLight</span></div>
+        <div class="font-list-item"><span class="role">Accent</span><span>Fraunces Light Italic</span></div>
+      </div>
+    </div>
+    <div class="font-preview">
+      <div class="preview-heading">The First Year</div>
+      <div class="preview-sub">April 2025 — April 2026</div>
+      <div class="preview-body">We drove with no plan and ended up at a waterfall we didn't know existed. That's kind of how everything goes with us. Wrong turns becoming the whole point.</div>
+      <div class="preview-accent">...and I'd do it all again</div>
+    </div>
+  </div>
+
+  <!-- 9 -->
+  <div class="font-card fc-9">
+    <div class="font-info">
+      <div>
+        <div class="font-number">Font Palette 09</div>
+        <div class="font-name">Heritage</div>
+        <div class="font-vibe">Timeless. Old-world Garamond meets modern spacing.</div>
+      </div>
+      <div class="font-list">
+        <div class="font-list-item"><span class="role">Heading</span><span>EB Garamond</span></div>
+        <div class="font-list-item"><span class="role">Subheading</span><span>Josefin Sans Light</span></div>
+        <div class="font-list-item"><span class="role">Body</span><span>Cardo Italic</span></div>
+        <div class="font-list-item"><span class="role">Accent</span><span>Josefin Sans ExtraLight</span></div>
+      </div>
+    </div>
+    <div class="font-preview">
+      <div class="preview-heading">The First Year</div>
+      <div class="preview-sub">April 2025 — April 2026</div>
+      <div class="preview-body">We drove with no plan and ended up at a waterfall we didn't know existed. That's kind of how everything goes with us. Wrong turns becoming the whole point.</div>
+      <div class="preview-accent">Chapter One &mdash; Where It Started</div>
+    </div>
+  </div>
+
+  <!-- 10 -->
+  <div class="font-card fc-10">
+    <div class="font-info">
+      <div>
+        <div class="font-number">Font Palette 10</div>
+        <div class="font-name">Modern Clean</div>
+        <div class="font-vibe">Poised. Slim serif heading, ultra-clean geometric body.</div>
+      </div>
+      <div class="font-list">
+        <div class="font-list-item"><span class="role">Heading</span><span>Gilda Display</span></div>
+        <div class="font-list-item"><span class="role">Subheading</span><span>Urbanist Light</span></div>
+        <div class="font-list-item"><span class="role">Body</span><span>Urbanist ExtraLight</span></div>
+        <div class="font-list-item"><span class="role">Accent</span><span>Gilda Display</span></div>
+      </div>
+    </div>
+    <div class="font-preview">
+      <div class="preview-heading">The First Year</div>
+      <div class="preview-sub">April 2025 — April 2026</div>
+      <div class="preview-body">We drove with no plan and ended up at a waterfall we didn't know existed. That's kind of how everything goes with us. Wrong turns becoming the whole point.</div>
+      <div class="preview-accent">...and I'd do it all again</div>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
